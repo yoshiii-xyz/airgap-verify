@@ -1,0 +1,25 @@
+[package]
+name = "airgap-verify"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Offline verification of a narrow Sigstore evidence bundle format"
+license = "MIT"
+repository = "https://github.com/joshiii-xyz/airgap-verify"
+keywords = ["sigstore", "provenance", "offline", "verification"]
+categories = ["command-line-utilities", "cryptography"]
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+hex = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+sigstore-trust-root = { version = "0.11.0", default-features = false }
+sigstore-verify = { version = "0.11.0", default-features = false }
+
+[dev-dependencies]
+libc = "0.2"
+serde_json = "1.0"
+sigstore-trust-root = { version = "0.11.0", default-features = false }
+tempfile = "3.27"
