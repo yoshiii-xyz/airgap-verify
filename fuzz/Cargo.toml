@@ -1,0 +1,19 @@
+[package]
+name = "airgap-verify-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+sigstore-verify = { version = "0.11.0", default-features = false }
+
+[[bin]]
+name = "bundle-json"
+path = "fuzz_targets/bundle_json.rs"
+test = false
+doc = false
+bench = false
